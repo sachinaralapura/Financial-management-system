@@ -23,8 +23,11 @@
     <div class="container">
 
         <div>
-            <img src="../assets/images/github.svg" alt="">
-            <h3>github</h3>
+            <a href="https://github.com/sachinaralapura/Financial-management-system/tree/main/php">
+                <img src="../assets/images/github.svg" alt="">
+                <h2>Github-source code</h2>
+            </a>
+
 
         </div>
 
@@ -34,10 +37,10 @@
             <a href="https://www.linkedin.com/in/vinag-sv-40855b234/">
                 <img class="logo" src="../assets/images/linkedin.svg" alt="">
             </a>
-            <a href="https://github.com/vinagsv">
+                <a href="https://github.com/vinagsv">
                 <img class="logo" src="../assets/images/github.svg" alt="">
             </a>
-            <a href="https://github.com/sachinaralapura">
+            <a href="https://twitter.com/vinagsv?t=K6T_Imsj5Lr1-ONqhOlG4g&s=09">
                 <img class="logo" src="../assets/images/twitter.svg" alt="">
             </a>
         </div>

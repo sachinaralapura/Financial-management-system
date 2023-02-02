@@ -48,14 +48,29 @@ h3 {
   margin: 20px;
   width: 100%;
   justify-content:space-evenly;
-  
+
+
+}
+.container a{
+  text-decoration: none;
+  margin: 10px;
+  /* border: solid violet 3px; */
 }
 .container img{
   width: 200px;
+  /* borkder: solid green 4px; */
 }
-
+.container img:hover{
+  width: 210px;
+  transition: all 0.2s  cubic-bezier(0, 0.87, 0.25, 1);
+}
 .container .logo{
   width: 50px;
+
+}
+.container .logo:hover{
+  width: 55px;
+  transition: all 0.2s  cubic-bezier(0, 0.87, 0.25, 1);
 }
 .container div{
   /* border: black solid 3px; */

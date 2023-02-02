@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2023 at 05:08 PM
+-- Generation Time: Feb 02, 2023 at 03:04 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `financial1`
+-- Database: `financial`
 --
 
 -- --------------------------------------------------------
@@ -40,7 +40,9 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`accid`, `accname`, `userid`, `amount`, `Accountnumber`) VALUES
-(3, 'canara', 1, 10000, 1234567);
+(3, 'canara', 1, 19000, 1234567),
+(5, 'karnataka', 1, 10000, 483792302),
+(6, 'punjab national bank', 1, 10000, 0);
 
 -- --------------------------------------------------------
 
@@ -82,6 +84,13 @@ CREATE TABLE `expenses` (
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `expenses`
+--
+
+INSERT INTO `expenses` (`title`, `accountid`, `ammount`, `date`) VALUES
+('sports', 3, 1000, '2023-02-02');
+
 -- --------------------------------------------------------
 
 --
@@ -94,6 +103,13 @@ CREATE TABLE `income` (
   `amount` int(12) NOT NULL,
   `accountid` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `income`
+--
+
+INSERT INTO `income` (`title`, `date`, `amount`, `accountid`) VALUES
+('salary', '2022-12-01', 10000, 3);
 
 -- --------------------------------------------------------
 
@@ -112,8 +128,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`EMAIL`, `name`, `password`) VALUES
-('sachin.aralapura@gmail.com', 'sachin', '$2y$10$dk8WTZFU2zUYNcmdtp1TdOg.XQtqkYh8JAkzBAg7gx.Px4qEiGF0y'),
-('vinag@gmail.com', 'vinag', '$2y$10$iS7eSfTZHeOURZVXKdrz3.PuN9i5tlD.j6JlUJwEUoVmmVEIrYWZq');
+('sachin.aralapura@gmail.com', 'sachin', '$2y$10$dk8WTZFU2zUYNcmdtp1TdOg.XQtqkYh8JAkzBAg7gx.Px4qEiGF0y');
 
 -- --------------------------------------------------------
 
@@ -132,8 +147,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`uid`, `username`, `email`) VALUES
-(1, 'sachin', 'sachin.aralapura@gmail.com'),
-(2, 'vinag', 'vinag@gmail.com');
+(1, 'sachin', 'sachin.aralapura@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -193,25 +207,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `accid` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `accid` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `cardid` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cardid` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `credit`
 --
 ALTER TABLE `credit`
-  MODIFY `credid` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `credid` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `uid` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `uid` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -221,19 +235,19 @@ ALTER TABLE `user`
 -- Constraints for table `accounts`
 --
 ALTER TABLE `accounts`
-  ADD CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user` (`uid`);
+  ADD CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user` (`uid`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `cards`
 --
 ALTER TABLE `cards`
-  ADD CONSTRAINT `cards_ibfk_1` FOREIGN KEY (`accid`) REFERENCES `accounts` (`accid`);
+  ADD CONSTRAINT `cards_ibfk_1` FOREIGN KEY (`accid`) REFERENCES `accounts` (`accid`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `credit`
 --
 ALTER TABLE `credit`
-  ADD CONSTRAINT `credit_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `accounts` (`accid`);
+  ADD CONSTRAINT `credit_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `accounts` (`accid`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `expenses`
@@ -251,7 +265,7 @@ ALTER TABLE `income`
 -- Constraints for table `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`email`) REFERENCES `login` (`EMAIL`);
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`email`) REFERENCES `login` (`EMAIL`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

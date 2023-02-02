@@ -17,6 +17,7 @@ $sql = "SELECT email FROM user WHERE uid = '$user_id'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_row($result);
 $user_email = $row[0];
+$_SESSION['user_email'] = $user_email;
 $total  = 0;
 //-----------------------------------------------------------------
 
@@ -427,9 +428,16 @@ error_reporting(0);
 
                 <div class="bottom-content">
                     <li class="list">
-                        <a href="#" class="nav-link">
+                        <a href="contact.php" class="nav-link">
                             <i class='bx bxs-radiation icon'></i>
                             <span class="link">About</span>
+                        </a>
+                    </li>
+
+                    <li class="list">
+                        <a href="deleteaccount.php" class="nav-link">
+                            <i class='bx bxs-log-out icon'></i>
+                            <span class="link">Delete account</span>
                         </a>
                     </li>
 
@@ -439,6 +447,7 @@ error_reporting(0);
                             <span class="link">Sign-out</span>
                         </a>
                     </li>
+
                 </div>
             </div>
         </div>

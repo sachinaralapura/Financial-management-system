@@ -48,7 +48,7 @@
         
     }
            
-           
+        
     if(isset($_POST['sign-submit'])){
         require '../dbinc.php';
         $user_name =$_POST['sign-name'];
@@ -82,63 +82,6 @@
         }
         
     }
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-            // $sql = "SELECT * FROM login WHERE email = ?";
-            // //create a prepared statement
-            // $stmt  = mysqli_stmt_init($conn);
-            // //prepare the prepared statement
-            // if(!mysqli_stmt_prepare($stmt,$sql)){
-            //     echo "sql statement failed";
-            // }else{
-            //     echo "sucess";
-            //     //bind parameters to the placeholders
-            //     mysqli_stmt_bind_param($stmt,"s",$log_email);
-            //     //Run parameters inside database
-            //     mysqli_stmt_execute($stmt);
-            //     $row = mysqli_stmt_get_result($stmt);
-            // }
-            // $row = mysqli_fetch_assoc($row);
-            
-            // echo is_array($row);
-
-        
-            //print_r($row['password']);
-            // if($row["email"]=="sachin.aralapura@gmail.com"){
-            //     echo "<h1> admim </h1> ";
-            // }
-            
-       
-        
-           
+                   
     
 ?>  

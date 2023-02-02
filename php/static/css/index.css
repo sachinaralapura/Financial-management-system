@@ -36,7 +36,7 @@
 
 
 .welcome h2{
-    color: rgb(128, 40, 211);
+    color: rgb(37, 51, 198);
     margin-bottom :10%;;
 }
 
@@ -47,7 +47,7 @@
 
 .welcome input{
     color: white;
-    background-color: rgb(111, 33, 185);
+    background-color:rgb(37, 51, 198);
     width: 120px;
     height: 40px; 
     border: none;
@@ -56,9 +56,38 @@
 
 .welcome input:hover{
     color: black;
-    background-color:rgb(128, 63, 189) ;
+    background-color:rgb(37, 51, 198)
 }
 
 .image{
    width: 70%;
 }
+
+.Dashboardpanel {
+    display: flex;
+    flex-direction: column;
+}
+
+.Dashboardpanel .dashacc,.dashincomes,.dashexpenses,.dashcredits,.dashcards{
+    display: flex;
+    /* border: black solid 3px; */
+    padding: 20px;
+    margin: 20px;
+}
+
+.Dashboardpanel img{
+    /* border: rgb(192, 0, 0) solid 3px; */
+    width:400px ;
+}
+.Dashboardpanel p{
+    font-size: 18px;
+    padding: 20px;
+    margin: 0 20px 0 20px;
+    /* border: black solid 3px; */
+}
+
+.Dashboardpanel span{
+    font-size: 30px;
+    font-weight: 400;
+}
+
